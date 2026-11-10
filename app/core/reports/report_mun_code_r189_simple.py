@@ -354,7 +354,7 @@ class ReportMunCodeR189Simple:
             logger.info("=== INICIANDO GERAÇÃO DE RELATÓRIO MUN_CODE vs R189 (SIMPLES) ===")
             
             # Caminhos dos arquivos no SharePoint
-            consolidado_path = "/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO"
+            consolidado_path = "/sites/portfolio/automacao-financeira/CONSOLIDADO"
             
             # Busca os arquivos consolidados no SharePoint
             logger.info("Baixando arquivo Municipality_Code_consolidado.xlsx")
@@ -439,7 +439,7 @@ class ReportMunCodeR189Simple:
             
             # Envia o relatório para o SharePoint na pasta SRV_CODE_SIMPLE em vez de MUN_CODE
             logger.info(f"Enviando relatório {report_filename} para o SharePoint")
-            relatorios_path = "/teams/BR-TI-TIN/AutomaoFinanas/RELATÓRIOS/SRV_CODE_SIMPLE"
+            relatorios_path = "/sites/portfolio/automacao-financeira/RELATÓRIOS/SRV_CODE_SIMPLE"
 
             # Usar o método assíncrono do SharePointAuth
             upload_success = await self.sharepoint_auth.enviar_arquivo_sharepoint(
