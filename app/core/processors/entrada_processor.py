@@ -36,11 +36,11 @@ class EntradaProcessor:
         
         # Pastas do SharePoint
         self.PATHS = {
-            "ENTRADA": "/teams/BR-TI-TIN/AutomaoFinanas/ENTRADA",
-            "R189": "/teams/BR-TI-TIN/AutomaoFinanas/R189",
-            "QPE": "/teams/BR-TI-TIN/AutomaoFinanas/QPE",
-            "NFSERV": "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV",
-            "SPB": "/teams/BR-TI-TIN/AutomaoFinanas/SPB",
+            "ENTRADA": "/sites/portfolio/automacao-financeira/ENTRADA",
+            "R189": "/sites/portfolio/automacao-financeira/R189",
+            "QPE": "/sites/portfolio/automacao-financeira/QPE",
+            "NFSERV": "/sites/portfolio/automacao-financeira/NFSERV",
+            "SPB": "/sites/portfolio/automacao-financeira/SPB",
         }
         logger.debug(f"Caminhos configurados: {self.PATHS}")
         
