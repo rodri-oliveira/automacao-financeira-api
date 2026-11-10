@@ -24,7 +24,7 @@ async def list_r189_files():
     """Lista os arquivos R189 disponíveis no SharePoint"""
     try:
         sharepoint = SharePointClient()
-        pasta_r189 = '/teams/BR-TI-TIN/AutomaoFinanas/R189'
+        pasta_r189 = '/sites/portfolio/automacao-financeira/R189'
         
         files = await sharepoint.list_files(pasta_r189)
         
@@ -192,11 +192,11 @@ async def download_file(file_name: str):
         )
 
 PASTAS = {
-    'R189': "/teams/BR-TI-TIN/AutomaoFinanas/R189",
-    'QPE': "/teams/BR-TI-TIN/AutomaoFinanas/QPE",
-    'SPB': "/teams/BR-TI-TIN/AutomaoFinanas/SPB",
-    'NFSERV': "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV",
-    'MUN_CODE': "/teams/BR-TI-TIN/AutomaoFinanas/R189"
+    'R189': "/sites/portfolio/automacao-financeira/R189",
+    'QPE': "/sites/portfolio/automacao-financeira/QPE",
+    'SPB': "/sites/portfolio/automacao-financeira/SPB",
+    'NFSERV': "/sites/portfolio/automacao-financeira/NFSERV",
+    'MUN_CODE': "/sites/portfolio/automacao-financeira/R189"
 }
 
 @router.get("/arquivos/{tipo}")
@@ -278,11 +278,11 @@ router = APIRouter()
 logger = logging.getLogger(__name__)
 
 PASTAS = {
-    'R189': "/teams/BR-TI-TIN/AutomaoFinanas/R189",
-    'QPE': "/teams/BR-TI-TIN/AutomaoFinanas/QPE",
-    'SPB': "/teams/BR-TI-TIN/AutomaoFinanas/SPB",
-    'NFSERV': "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV",
-    'MUN_CODE': "/teams/BR-TI-TIN/AutomaoFinanas/R189"
+    'R189': "/sites/portfolio/automacao-financeira/R189",
+    'QPE': "/sites/portfolio/automacao-financeira/QPE",
+    'SPB': "/sites/portfolio/automacao-financeira/SPB",
+    'NFSERV': "/sites/portfolio/automacao-financeira/NFSERV",
+    'MUN_CODE': "/sites/portfolio/automacao-financeira/R189"
 }
 
 @router.get("/arquivos/{tipo}")
