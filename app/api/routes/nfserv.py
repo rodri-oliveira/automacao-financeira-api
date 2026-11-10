@@ -21,7 +21,7 @@ async def buscar_arquivos(tipo: str):
         if not token:
             raise HTTPException(status_code=401, detail="Falha na autenticação com SharePoint")
 
-        pasta = "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV"
+        pasta = "/sites/portfolio/automacao-financeira/NFSERV"
         url = f"{auth.site_url}/_api/web/GetFolderByServerRelativeUrl('{pasta}')/Files"
         
         headers = {
