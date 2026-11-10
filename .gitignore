@@ -173,3 +173,8 @@ cython_debug/
 !.env.example
 *.key
 *.p12
+
+# Arquivos locais de sessão e autenticação
+token_cache*.json
+auth_cache*.json
+*msal*cache*.json
