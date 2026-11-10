@@ -13,8 +13,8 @@ class Settings(BaseSettings):
     RESOURCE: str = os.getenv("RESOURCE", "")
 
     # Caminhos das pastas no SharePoint
-    R189_FOLDER: str = "/teams/BR-TI-TIN/AutomaoFinanas/R189"
-    CONSOLIDATED_FOLDER: str = "/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO"
+    R189_FOLDER: str = os.getenv('R189_FOLDER', '/R189')
+    CONSOLIDATED_FOLDER: str = os.getenv('CONSOLIDATED_FOLDER', '/consolidated')
 
     # Configurações da API
     API_V1_STR: str = "/api/v1"
