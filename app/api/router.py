@@ -21,8 +21,8 @@ load_dotenv()
 # Constantes
 SITE_URL = os.getenv('SITE_URL')
 PASTAS = {
-    'R189': '/teams/BR-TI-TIN/AutomaoFinanas/R189',
-    'CONSOLIDADO': '/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO'
+    'R189': '/sites/portfolio/automacao-financeira/R189',
+    'CONSOLIDADO': '/sites/portfolio/automacao-financeira/CONSOLIDADO'
 }
 
 @api_router.get("/arquivos/{tipo}")
