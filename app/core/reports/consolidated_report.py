@@ -20,8 +20,8 @@ class ConsolidatedReport:
     def __init__(self):
         self.sharepoint_auth = SharePointAuth()
         self.sharepoint_client = SharePointClient()
-        self.relatorios_base_path = "/teams/BR-TI-TIN/AutomaoFinanas/RELATÓRIOS"
-        self.orange_repository_path = "/teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/RELATORIOS"
+        self.relatorios_base_path = "/sites/portfolio/automacao-financeira/RELATÓRIOS"
+        self.orange_repository_path = "/sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/RELATORIOS"
         
     async def _list_files_in_folder(self, folder_path):
         """
@@ -236,7 +236,7 @@ class ConsolidatedReport:
         """
         Envia o relatório consolidado para o repositório Orange no SharePoint.
         
-        O caminho base é: /teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/RELATORIOS
+        O caminho base é: /sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/RELATORIOS
         
         Esta função:
         1. Verifica se existe uma pasta com o ano corrente (ex: 2025)
@@ -264,7 +264,7 @@ class ConsolidatedReport:
                 }
             
             # URL base para o SharePoint Contratos - IMPORTANTE: é diferente do site_url padrão
-            sharepoint_contratos_base_url = "https://weg365.sharepoint.com/teams/BR-TI-TIN/contratos"
+            sharepoint_contratos_base_url = "https://weg365.sharepoint.com/sites/portfolio/contratos"
             logger.info(f"Usando URL base para SharePoint Contratos: {sharepoint_contratos_base_url}")
             
             # Obter data atual para criar estrutura de pastas
