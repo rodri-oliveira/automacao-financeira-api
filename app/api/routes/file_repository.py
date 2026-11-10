@@ -27,7 +27,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # URL base para acesso ao SharePoint Contratos (com base no curl que funcionou)
-SHAREPOINT_CONTRATOS_BASE_URL = "https://weg365.sharepoint.com/teams/BR-TI-TIN/contratos"
+SHAREPOINT_CONTRATOS_BASE_URL = "https://weg365.sharepoint.com/sites/portfolio/contratos"
 
 router = APIRouter(
     prefix="/files-repository",
@@ -63,11 +63,11 @@ def encode_sharepoint_path(path):
 
 # Caminhos das pastas de origem - mantendo os originais para referência
 ORIGINAL_PATHS = {
-    "ENTRADA": "/teams/BR-TI-TIN/AutomaoFinanas/ENTRADA",   
-    "R189": "/teams/BR-TI-TIN/AutomaoFinanas/R189",
-    "QPE": "/teams/BR-TI-TIN/AutomaoFinanas/QPE",
-    "NFSERV": "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV",
-    "SPB": "/teams/BR-TI-TIN/AutomaoFinanas/SPB",
+    "ENTRADA": "/sites/portfolio/automacao-financeira/ENTRADA",   
+    "R189": "/sites/portfolio/automacao-financeira/R189",
+    "QPE": "/sites/portfolio/automacao-financeira/QPE",
+    "NFSERV": "/sites/portfolio/automacao-financeira/NFSERV",
+    "SPB": "/sites/portfolio/automacao-financeira/SPB",
 }
 
 # Caminhos das pastas de origem codificados para uso em URLs
@@ -75,9 +75,9 @@ PATHS = {key: encode_sharepoint_path(path) for key, path in ORIGINAL_PATHS.items
 
 # Caminhos das pastas de destino (repositório) - USANDO CAMINHOS SEM CODIFICAÇÃO
 REPOSITORY_PATHS = {
-    "CADASTRAR": "/teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar",
-    "ESCRITURAR": "/teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/Escriturar",
-    "NOTA_FISCAL": "/teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/Nota_Fiscal_Serviço"
+    "CADASTRAR": "/sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar",
+    "ESCRITURAR": "/sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/Escriturar",
+    "NOTA_FISCAL": "/sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/Nota_Fiscal_Serviço"
 }
 
 # Variável global para controlar o estado de cancelamento
@@ -680,7 +680,7 @@ async def test_curl_exact():
         logger.info(f"[CURL-EXACT] URL base do Contratos: {SHAREPOINT_CONTRATOS_BASE_URL}")
         
         # Usar exatamente o mesmo caminho do curl
-        folder_path = "/teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar"
+        folder_path = "/sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar"
         test_filename = f"teste_curl_{datetime.now().strftime('%Y%m%d%H%M%S')}.txt"
         
         # Criar um arquivo de teste simples
@@ -913,11 +913,11 @@ async def prepare_date_folder_structure(token, site_url, base_folder_path, clean
     Args:
         token: Token de autenticação
         site_url: URL base do site SharePoint
-        base_folder_path: Caminho base (ex: /teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar)
+        base_folder_path: Caminho base (ex: /sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar)
         clean_month_folder: Se True, limpa a pasta do mês se ela já existir
         
     Returns:
-        caminho completo para pasta destino (ex: /teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar/2025/2025.04)
+        caminho completo para pasta destino (ex: /sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar/2025/2025.04)
     """
     try:
         logger.info(f"[DATE_FOLDER] Preparando estrutura de pastas para {base_folder_path}")
@@ -1223,11 +1223,11 @@ async def debug_auth():
         auth_site_url = auth.site_url
         
         # Montar URL como no curl que funcionou
-        test_folder = "/teams/BR-TI-TIN/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar"
+        test_folder = "/sites/portfolio/contratos/Telecom/Repositório_Faturas_Auto_Orange/Cadastrar"
         test_filename = "test.txt"
         
         # URL que funcionou no Postman 
-        working_url = f"https://weg365.sharepoint.com/teams/BR-TI-TIN/contratos/_api/web/GetFolderByServerRelativeUrl('{test_folder}')/Files/add(overwrite=true,url='{test_filename}')"
+        working_url = f"https://weg365.sharepoint.com/sites/portfolio/contratos/_api/web/GetFolderByServerRelativeUrl('{test_folder}')/Files/add(overwrite=true,url='{test_filename}')"
         
         # URL que seria construída com SITE_URL
         current_url = f"{site_url}/_api/web/GetFolderByServerRelativeUrl('{test_folder}')/Files/add(overwrite=true,url='{test_filename}')"
