@@ -194,7 +194,7 @@ class R189Extractor:
                     # Download do arquivo
                     content = self.sharepoint_auth.baixar_arquivo_sharepoint(
                         arquivo,
-                        "/teams/BR-TI-TIN/AutomaoFinanas/R189"
+                        "/sites/portfolio/automacao-financeira/R189"
                     )
                     
                     if not content:
@@ -214,7 +214,7 @@ class R189Extractor:
                         logger.info(f"Tamanho do arquivo consolidado: {len(arquivo_bytes)} bytes")
                         
                         # Configuração para upload
-                        destino = "/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO"
+                        destino = "/sites/portfolio/automacao-financeira/CONSOLIDADO"
                         logger.info(f"Enviando para: {destino}/{nome_consolidado}")
                         
                         # Envia para o SharePoint
