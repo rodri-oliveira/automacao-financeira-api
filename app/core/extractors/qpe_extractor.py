@@ -115,8 +115,8 @@ class QPEExtractor:
         """
         logger.info(f"=== INICIANDO CONSOLIDAÇÃO DE {len(pdf_files)} ARQUIVOS QPE ===")
         dados_consolidados = []
-        pasta_qpe = '/teams/BR-TI-TIN/AutomaoFinanas/QPE'
-        pasta_consolidado = '/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO'
+        pasta_qpe = '/sites/portfolio/automacao-financeira/QPE'
+        pasta_consolidado = '/sites/portfolio/automacao-financeira/CONSOLIDADO'
         
         for i, pdf_file in enumerate(pdf_files):
             try:
@@ -227,7 +227,7 @@ class QPEExtractor:
                     # Baixar arquivo - IMPORTANTE: Não use await aqui
                     content = self.sharepoint_auth.baixar_arquivo_sharepoint(
                         arquivo,
-                        "/teams/BR-TI-TIN/AutomaoFinanas/QPE"
+                        "/sites/portfolio/automacao-financeira/QPE"
                     )
                     
                     if content:
@@ -259,7 +259,7 @@ class QPEExtractor:
                 
                 # Enviar para o SharePoint
                 nome_consolidado = "QPE_consolidado.xlsx"
-                destino = "/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO"
+                destino = "/sites/portfolio/automacao-financeira/CONSOLIDADO"
                 
                 logger.info(f"Enviando arquivo consolidado para o SharePoint: {nome_consolidado}")
                 logger.info(f"Pasta destino: {destino}")
