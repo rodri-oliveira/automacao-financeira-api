@@ -10,11 +10,11 @@ logger = logging.getLogger(__name__)
 
 # Constantes para os caminhos base
 PATHS = {
-    "ENTRADA": "/teams/BR-TI-TIN/AutomaoFinanas/ENTRADA",
-    "R189": "/teams/BR-TI-TIN/AutomaoFinanas/R189",
-    "QPE": "/teams/BR-TI-TIN/AutomaoFinanas/QPE",
-    "SPB": "/teams/BR-TI-TIN/AutomaoFinanas/SPB",
-    "NFSERV": "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV"
+    "ENTRADA": "/sites/portfolio/automacao-financeira/ENTRADA",
+    "R189": "/sites/portfolio/automacao-financeira/R189",
+    "QPE": "/sites/portfolio/automacao-financeira/QPE",
+    "SPB": "/sites/portfolio/automacao-financeira/SPB",
+    "NFSERV": "/sites/portfolio/automacao-financeira/NFSERV"
 }
 
 # Padrões de arquivo para cada tipo
