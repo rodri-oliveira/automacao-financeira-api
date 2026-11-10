@@ -31,10 +31,10 @@ A conferência manual de planilhas e arquivos com formatos distintos gera retrab
 
 O ponto de entrada está em `app/main.py` e as dependências em `requirements.txt`. Há um script `run_server.py` para iniciar a API em desenvolvimento.
 
-**Limitações:** parte do fluxo depende de serviços externos da implantação original. A execução completa e as integrações **não foram revalidadas** nesta revisão. Para experimentos, use somente documentos fictícios e serviços próprios; não publique arquivos, segredos ou dados pessoais reais.
+**Pré-requisitos para demonstração:** arquivos de exemplo compatíveis com os extratores e configuração dos serviços de integração. A execução integrada depende dessas fontes e dos serviços de apoio.
 
 ## Competências demonstradas
 
 Automação com Python, APIs REST, modularização, regras de validação, tratamento de dados e geração de relatórios.
 
-**Status:** código histórico de portfólio, sem validação atual de implantação independente.
+**Status:** implementação técnica documentada; execução integrada depende de configuração adicional.
