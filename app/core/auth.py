@@ -39,8 +39,7 @@ class SharePointAuth:
         else:
             logger.warning("RESOURCE não contém '/', usando valores padrão")
             self.resource = "00000003-0000-0ff1-ce00-000000000000"
-            self.sharepoint_host = "weg365.sharepoint.com"
-        
+            self.sharepoint_host = os.getenv('SHAREPOINT_HOST', '')
         self.site_url = os.getenv("SITE_URL", "").rstrip('/')
         logger.debug(f"SITE_URL configurada: {self.site_url}")
         
