@@ -113,7 +113,7 @@ class MunicipalityCodeExtractor:
             
             # Enviar o arquivo consolidado para o SharePoint com sobrescrita
             nome_arquivo_consolidado = 'Municipality_Code_consolidado.xlsx'
-            pasta_consolidado = '/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO'
+            pasta_consolidado = '/sites/portfolio/automacao-financeira/CONSOLIDADO'
             
             logger.info(f"Enviando arquivo consolidado para o SharePoint: {nome_arquivo_consolidado}")
             logger.info(f"Pasta destino: {pasta_consolidado}")
@@ -166,7 +166,7 @@ class MunicipalityCodeExtractor:
                     # Baixar arquivo - IMPORTANTE: Não use await aqui
                     content = self.sharepoint_auth.baixar_arquivo_sharepoint(
                         arquivo,
-                        "/teams/BR-TI-TIN/AutomaoFinanas/R189"  # MUN_CODE usa a mesma pasta do R189
+                        "/sites/portfolio/automacao-financeira/R189"  # MUN_CODE usa a mesma pasta do R189
                     )
                     
                     if content:
@@ -198,7 +198,7 @@ class MunicipalityCodeExtractor:
                 
                 # Enviar para o SharePoint com sobrescrita explícita
                 nome_consolidado = "Municipality_Code_consolidado.xlsx"
-                destino = "/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO"
+                destino = "/sites/portfolio/automacao-financeira/CONSOLIDADO"
                 
                 logger.info(f"Enviando arquivo consolidado para o SharePoint: {nome_consolidado}")
                 logger.info(f"Pasta destino: {destino}")
