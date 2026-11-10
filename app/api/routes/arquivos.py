@@ -15,11 +15,11 @@ async def list_files(tipo: str):
         
         # Mapeia o tipo para o caminho no SharePoint
         caminhos = {
-            "R189": "/teams/BR-TI-TIN/AutomaoFinanas/R189",
-            "QPE": "/teams/BR-TI-TIN/AutomaoFinanas/QPE",
-            "SPB": "/teams/BR-TI-TIN/AutomaoFinanas/SPB",
-            "NFSERV": "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV",
-            "MUN_CODE": "/teams/BR-TI-TIN/AutomaoFinanas/MUN_CODE"
+            "R189": "/sites/portfolio/automacao-financeira/R189",
+            "QPE": "/sites/portfolio/automacao-financeira/QPE",
+            "SPB": "/sites/portfolio/automacao-financeira/SPB",
+            "NFSERV": "/sites/portfolio/automacao-financeira/NFSERV",
+            "MUN_CODE": "/sites/portfolio/automacao-financeira/MUN_CODE"
         }
         
         if tipo.upper() not in caminhos:
