@@ -48,7 +48,7 @@ class ProcessingService:
                 await self.sharepoint_client.upload_file(
                     file_content=result["consolidated_file"],
                     destination_name=f"R189_consolidado_{file_name}",
-                    folder_path="/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO"
+                    folder_path="/sites/portfolio/automacao-financeira/CONSOLIDADO"
                 )
                 logger.info(f"Arquivo enviado com sucesso para o SharePoint: R189_consolidado_{file_name}")
             except Exception as upload_error:
