@@ -265,7 +265,7 @@ class DivergenceReportR189:
             logger.info("=== INICIANDO GERAÇÃO DE RELATÓRIO DE DIVERGÊNCIAS R189 ===")
             
             # Caminhos dos arquivos no SharePoint
-            consolidado_path = "/teams/BR-TI-TIN/AutomaoFinanas/CONSOLIDADO"
+            consolidado_path = "/sites/portfolio/automacao-financeira/CONSOLIDADO"
             
             # Busca o arquivo consolidado no SharePoint
             logger.info("Baixando arquivo R189_consolidado.xlsx")
@@ -339,7 +339,7 @@ class DivergenceReportR189:
                 
                 # Envia o relatório para o SharePoint
                 logger.info(f"Enviando relatório {report_filename} para o SharePoint")
-                relatorios_path = "/teams/BR-TI-TIN/AutomaoFinanas/RELATÓRIOS/R189"
+                relatorios_path = "/sites/portfolio/automacao-financeira/RELATÓRIOS/R189"
                 
                 # Usar o método assíncrono do SharePointAuth
                 upload_success = await self.sharepoint_auth.enviar_arquivo_sharepoint(
