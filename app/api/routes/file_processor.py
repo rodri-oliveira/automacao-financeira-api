@@ -21,11 +21,11 @@ logger = logging.getLogger(__name__)
 
 # Caminhos das pastas
 PATHS = {
-    "ENTRADA": "/teams/BR-TI-TIN/AutomaoFinanas/ENTRADA",
-    "R189": "/teams/BR-TI-TIN/AutomaoFinanas/R189",
-    "QPE": "/teams/BR-TI-TIN/AutomaoFinanas/QPE",
-    "NFSERV": "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV",
-    "SPB": "/teams/BR-TI-TIN/AutomaoFinanas/SPB",
+    "ENTRADA": "/sites/portfolio/automacao-financeira/ENTRADA",
+    "R189": "/sites/portfolio/automacao-financeira/R189",
+    "QPE": "/sites/portfolio/automacao-financeira/QPE",
+    "NFSERV": "/sites/portfolio/automacao-financeira/NFSERV",
+    "SPB": "/sites/portfolio/automacao-financeira/SPB",
 }
 
 # Cache para conteúdos de arquivo
@@ -1553,7 +1553,7 @@ async def rename_files_clean():
                 if re.search(r"QPE-\d{6}(?![A-Za-z])", original_name, re.IGNORECASE):
                     file_type = "qpe_sem_letra"
                     logger.info(f"Identificado como QPE sem letra: {original_name}")
-                    destination_folder = PATHS.get("QPE", "/teams/BR-TI-TIN/AutomaoFinanas/QPE")
+                    destination_folder = PATHS.get("QPE", "/sites/portfolio/automacao-financeira/QPE")
 
                     # Baixar o arquivo para extrair a cidade
                     file_content = await download_file(token, site_url, PATHS["ENTRADA"], original_name)
@@ -1596,7 +1596,7 @@ async def rename_files_clean():
                     file_type = "qpe_com_letra"
                     logger.info(f"Identificado como QPE com letra: {original_name}")
                     new_name = f"FATURA-LOCAÇÃO_{original_name.upper()}"
-                    destination_folder = PATHS.get("NFSERV", "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV")
+                    destination_folder = PATHS.get("NFSERV", "/sites/portfolio/automacao-financeira/NFSERV")
                     file_content = await download_file(token, site_url, PATHS["ENTRADA"], original_name)
                     if not file_content:
                         results["erros"].append({
@@ -1612,7 +1612,7 @@ async def rename_files_clean():
                 elif re.search(r"SPB-\d{6}(?![A-Za-z])", original_name, re.IGNORECASE):
                     file_type = "spb_sem_letra"
                     logger.info(f"Identificado como SPB sem letra: {original_name}")
-                    destination_folder = PATHS.get("SPB", "/teams/BR-TI-TIN/AutomaoFinanas/SPB")
+                    destination_folder = PATHS.get("SPB", "/sites/portfolio/automacao-financeira/SPB")
 
                     file_content = await download_file(token, site_url, PATHS["ENTRADA"], original_name)
                     if file_content:
@@ -1654,7 +1654,7 @@ async def rename_files_clean():
                     file_type = "telecom"
                     logger.info(f"Identificado como TELECOM: {original_name}")
                     new_name = f"TELECOMUNICAÇÕES_{original_name.upper()}"
-                    destination_folder = PATHS.get("NFSERV", "/teams/BR-TI-TIN/AutomaoFinanas/NFSERV")
+                    destination_folder = PATHS.get("NFSERV", "/sites/portfolio/automacao-financeira/NFSERV")
                     file_content = await download_file(token, site_url, PATHS["ENTRADA"], original_name)
                     if not file_content:
                         results["erros"].append({
