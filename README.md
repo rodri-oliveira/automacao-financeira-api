@@ -1,30 +1,40 @@
-This is a [FastAPI](https://fastapi.tiangolo.com/) project bootstrapped with [Developers Portal](https://developers-portal.weg.net/).
+# Automação Financeira — API de Processamento e Validação
 
-## Getting Started
+Backend em **Python e FastAPI** para automatizar a leitura, organização e comparação de informações provenientes de diferentes relatórios financeiros.
 
-First, to run in development you may need to create a `.env` file in the root of the project.
+## Problema e solução
 
-This `.env` file should contain the given variables:
+A conferência manual de planilhas e arquivos com formatos distintos gera retrabalho e dificulta rastrear divergências. O projeto organiza um fluxo de **extração → consolidação → validação → relatório**, com regras específicas para cada tipo de documento.
 
-|Name|Description|Example|
-|-|-|-|
-|SWAGGER_SERVERS_LIST|List of servers divided by `,` that are passed to the [servers](https://swagger.io/docs/specification/api-host-and-base-path/) property of OpenAPI|`/,/api`|
-|JWT_AUDIENCE|The [aud](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.3) claim value that will be asserted, usually the [client_id](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) for the given application|`app_client_id`|
-|JWT_ISSUER|The [iss](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.1) value that will be compared to the token claim |`https://auth-qa.weg.net`|
+## Funcionalidades presentes no repositório
 
+- Extração e tratamento de arquivos identificados como **R189, QPE, SPB e NFSERV**.
+- Consolidação de registros para permitir comparação entre fontes.
+- Validações de dados e códigos utilizados na conferência.
+- Geração de **relatórios de divergências**.
+- Rotas de organização e processamento de arquivos.
+- Módulos de integração com armazenamento e canais externos.
 
-run the development server:
+## Organização técnica
 
-```bash
-fastapi dev main.py
-```
+**Python · FastAPI · processamento de dados e arquivos · APIs REST**
 
-The API will be available at [http://localhost:3000/api](http://localhost:3000/api).
+- `app/api/routes/`: endpoints por tipo de operação.
+- `app/core/extractors/`: extratores e normalização.
+- `app/core/reports/`: relatórios comparativos e divergências.
+- `app/core/services/`: orquestração do processamento.
 
-> You can find the docs at [http://localhost:3000/api](http://localhost:3000/api)
+**Interface web:** [Automação Financeira — Frontend](https://github.com/rodri-oliveira/automacao-financeira-web).  
+**Versão desktop relacionada:** [Automação Financeira — Desktop](https://github.com/rodri-oliveira/automacao-financeira-desktop).
 
-## Learn More
+## Como avaliar
 
-To leare more about FastAPI, take a look at the following resources:
+O ponto de entrada está em `app/main.py` e as dependências em `requirements.txt`. Há um script `run_server.py` para iniciar a API em desenvolvimento.
 
-- [FastAPI Documentation](https://fastapi.tiangolo.com/learn/) - learn about FastAPI features and API.
+**Limitações:** parte do fluxo depende de serviços externos da implantação original. A execução completa e as integrações **não foram revalidadas** nesta revisão. Para experimentos, use somente documentos fictícios e serviços próprios; não publique arquivos, segredos ou dados pessoais reais.
+
+## Competências demonstradas
+
+Automação com Python, APIs REST, modularização, regras de validação, tratamento de dados e geração de relatórios.
+
+**Status:** código histórico de portfólio, sem validação atual de implantação independente.
