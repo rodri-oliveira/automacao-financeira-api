@@ -12,7 +12,7 @@ async def download_report(filename: str):
     """
     try:
         # Caminho da pasta de relatórios
-        relatorios_path = "/teams/BR-TI-TIN/AutomaoFinanas/RELATÓRIOS"
+        relatorios_path = "/sites/portfolio/automacao-financeira/RELATÓRIOS"
         
         # Baixa o arquivo do SharePoint
         sharepoint_auth = SharePointAuth()
